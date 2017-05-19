@@ -16,6 +16,14 @@ import android.text.format.Time;
 import android.util.Log;
 import android.widget.Toast;
 
+/**
+  * Author by Kok Heng 04/03/2017
+  * realter 28/03/2017
+  * a recording class
+  * start and stop the recording route
+  * passing  it in the DBHelper
+  */
+
 public class GPStracker extends Service {
     public GPStracker() {
     }

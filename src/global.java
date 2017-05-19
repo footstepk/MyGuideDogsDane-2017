@@ -6,6 +6,11 @@ import com.mapbox.services.commons.models.Position;
 
 import java.util.ArrayList;
 
+/**
+  * Author by Kok Heng on 03/03/2017
+  * realter on 03/04/2017
+  */
+
 // global variable to use across different instant.
 
 public class global {

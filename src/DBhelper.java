@@ -1,7 +1,9 @@
 package com.ospit.heng.myguidedogsdane;
 
 /**
- * Created by alexcheong on 18/07/2016.
+ * Author by Kok Heng on 10/03/2017
+  * realter on 01/04/2017
+  * a SQLLite database structure
  */
 
 import android.content.ContentValues;

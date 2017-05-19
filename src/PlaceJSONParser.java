@@ -1,7 +1,7 @@
 package com.ospit.heng.myguidedogsdane;
 
 /**
- * Created by Kok Heng 05/04/2017.
+ * Author by Kok Heng 05/04/2017
  */
 
 import java.util.ArrayList;

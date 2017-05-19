@@ -1,4 +1,4 @@
-package com.ospit.heng.myguidedogsdane;
+﻿package com.ospit.heng.myguidedogsdane;
 
 import android.Manifest;
 import android.app.ActivityManager;
@@ -99,6 +99,12 @@ import com.google.android.gms.common.api.ResultCallback;
 import org.json.JSONObject;
 
 import static java.security.AccessController.getContext;
+
+/**
+  * Author by Kok Heng 25/03/2017
+  * all the activity classes reaction will placed here
+  * Listener, Location, Services, Backtracked funtion
+  */
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener,PermissionsListener,ConnectionCallbacks,OnConnectionFailedListener  {
 

@@ -40,7 +40,6 @@ import android.speech.tts.TextToSpeech;
 import android.speech.RecognizerIntent;
 import android.widget.Toast;
 
-
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.PendingResult;
@@ -87,7 +86,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -95,15 +93,15 @@ import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.common.api.ResultCallback;
 
-
 import org.json.JSONObject;
 
 import static java.security.AccessController.getContext;
 
 /**
-  * Author by Kok Heng 25/03/2017
+  * Implemented by Kok Heng 25/03/2017
   * all the activity classes reaction will placed here
   * Listener, Location, Services, Backtracked funtion
+  * get current location, return a point of origin
   */
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener,PermissionsListener,ConnectionCallbacks,OnConnectionFailedListener  {
@@ -112,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private LocationManager locationManager;
     private LocationListener listener;
     Intent intent;
-    static TextToSpeech t1;
+    static TextToSpeech t1; // for the text to speech announcement
     private Context mContext;
     DBhelper mydb;
     static AlertDialog alert;
@@ -132,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private GoogleApiClient mGoogleApiClient;
 
     private float azimut = 0f;
-    private SensorManager mSensorManager;
+    private SensorManager mSensorManager; // the compass mode
     Sensor accelerometer;
     Sensor magnetometer;
 
@@ -176,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                             global.sRecordName = recordname;
                             global.sRecordID = recordid;
 
-
+                            // select a record name
                             global.action = "selectRecord";
                             global.selectedIndex = 0;
                             speak("You have " + String.valueOf(global.datasize) + " record. Scroll screen to navigate thru your data.Tap screen to access data and long press exit data selection.");
@@ -189,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     return true;
 
 
-                case R.id.navigation_notifications:
+                case R.id.navigation_notifications: // get current location 
                     mTextMessage.setText(R.string.title_notifications);
                     speak("Get places at your location.");
                     global.action="places0";

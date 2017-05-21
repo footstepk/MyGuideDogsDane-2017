@@ -17,7 +17,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 /**
-  * Author by Kok Heng 04/03/2017
+  * Implemented by Kok Heng 04/03/2017
   * realter 28/03/2017
   * a recording class
   * start and stop the recording route
@@ -87,7 +87,7 @@ Toast.makeText(this, "GPS tacking starting", Toast.LENGTH_SHORT).show();
         String datestring = String.valueOf(now.year) + "-" + String.valueOf(now.month) + "-" + String.valueOf(now.monthDay) + " " + String.valueOf(now.hour) + ":" + String.valueOf(now.minute) + ":" + String.valueOf(now.second);
         global.recordid = datestring;
 
-        triggerService.start();
+        triggerService.start(); // starting
 
 
 

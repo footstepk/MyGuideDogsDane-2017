@@ -1,11 +1,5 @@
 package com.ospit.heng.myguidedogsdane;
 
-/**
- * Author by Kok Heng on 10/03/2017
-  * realter on 01/04/2017
-  * a SQLLite database structure
- */
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -16,14 +10,21 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Implemented by Kok Heng on 10/03/2017
+  * realter on 01/04/2017
+  * a SQLLite database structure
+  * the recorded data will be store in this class
+ */
+
 public class DBhelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "myguidedogsdane.db";
-    public static final String CONTACTS_TABLE_NAME = "locationdata";
-    public static final String CONTACTS_COLUMN_ID = "id";
-    public static final String CONTACTS_COLUMN_STATUS = "altitude";
-    public static final String CONTACTS_COLUMN_IMAGE = "longtitude";
-    public static final String CONTACTS_COLUMN_DATETIME = "datetime";
+    public static final String DATABASE_NAME = "myguidedogsdane.db"; // the db name
+    public static final String CONTACTS_TABLE_NAME = "locationdata"; // the table name
+    public static final String CONTACTS_COLUMN_ID = "id"; // the column header ID
+    public static final String CONTACTS_COLUMN_STATUS = "altitude"; // the latitude header
+    public static final String CONTACTS_COLUMN_IMAGE = "longtitude"; // the image of the longitude
+    public static final String CONTACTS_COLUMN_DATETIME = "datetime"; // the time/date
     private HashMap hp;
 
     public DBhelper(Context context)
@@ -38,7 +39,7 @@ public class DBhelper extends SQLiteOpenHelper {
                 "create table locationdata " +
                         "(id text, recordid text, altitude text,longtitude text,datetime text)"
         );
-
+        // create database file
         db.execSQL(
                 "create table locationFile " +
                         "(id text, recordname text, recordid text)"
@@ -46,9 +47,12 @@ public class DBhelper extends SQLiteOpenHelper {
 
     }
 
+        //**
+        * update the current and the old data
+  */
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // TODO Auto-generated method stub
         db.execSQL("DROP TABLE IF EXISTS locationdata");
         db.execSQL("DROP TABLE IF EXISTS locationFile");
 

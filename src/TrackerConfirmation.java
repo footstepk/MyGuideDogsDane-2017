@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.Timer;
 
 /**
- * Author by Kok Heng on 11/04/2017
- */
+ * Implemented by Kok Heng on 11/04/2017
+ *
   * this class to check the route information
   * to confirmation the route activity
   /*
@@ -45,7 +45,7 @@ public class TrackerConfirmation extends Activity implements SensorEventListener
     Context mcontext;
     DBhelper mydb;
 
-
+    // the constructor
     public TrackerConfirmation(Context context, long timeInMillis, long threshold) {
         try {
             this.timeInMillis = timeInMillis;
@@ -56,6 +56,7 @@ public class TrackerConfirmation extends Activity implements SensorEventListener
             }
             valueStack = new ArrayList<Float>((int)(timeInMillis/100));
             sensorMgr = (SensorManager) context.getSystemService(SENSOR_SERVICE);
+            // the compass helper, check the position
             mAccelerometer = sensorMgr.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
             mcontext = context;
 
@@ -65,6 +66,7 @@ public class TrackerConfirmation extends Activity implements SensorEventListener
         }
     }
 
+    // starting position
     public void start() {
 
         try {
@@ -83,6 +85,7 @@ public class TrackerConfirmation extends Activity implements SensorEventListener
         }
     }
 
+    // stop the sensor
     public void stop(){
         try {
             sensorMgr.unregisterListener(this, mAccelerometer);
@@ -106,6 +109,7 @@ public class TrackerConfirmation extends Activity implements SensorEventListener
     private float last_y;
     private float last_z;
 
+    // get the sensor work to check the position
     public void onSensorChanged(SensorEvent event) {
         try {
             if (event.sensor == mAccelerometer) {

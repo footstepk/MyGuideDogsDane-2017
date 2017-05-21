@@ -1,9 +1,5 @@
 package com.ospit.heng.myguidedogsdane;
 
-/**
- * Author by Kok Heng 05/04/2017
- */
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +7,11 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+/**
+ * Implemented by Kok Heng 05/04/2017
+  * the browser of surrounding Google Place
+ */
 
 public class PlaceJSONParser {
 

@@ -13,7 +13,7 @@ import com.mapbox.mapboxsdk.annotations.Icon;
 import com.mapbox.mapboxsdk.annotations.IconFactory;
 
 /**
-  * Author by Kok Heng 05/04/2017
+  * Implemented by Kok Heng 05/04/2017
   * realter on 25/04/2017
   * A call MapBox Utility
   */
